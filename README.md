@@ -294,13 +294,7 @@ MongoDB Storage
 - Docker-Based Code Sandbox
 - Role-Based Access Control
 
----
 
-# 👨‍💻 Author
-
-**Ashish Kumar Singh**  
-B.E. Computer Science Engineering  
-Chitkara University
 
 ---
 

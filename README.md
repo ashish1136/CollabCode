@@ -1,113 +1,155 @@
-CollabCode: AI-Powered Meeting Assistant & Real-Time Collaborative Platform
-🚀 Overview
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabCode - Project Documentation</title>
+</head>
+<body>
 
-CollabCode is a MERN-stack based real-time collaboration platform designed for developers, students, and teams to work together seamlessly in a single workspace. The platform combines video conferencing, collaborative coding, whiteboarding, code execution, and AI-powered meeting summaries to reduce context switching between multiple tools.
+    <h1 align="center">🚀 CollabCode</h1>
+    <h3 align="center">AI-Powered Meeting Assistant & Real-Time Collaborative Platform</h3>
 
-The system enables multiple users to join a room, communicate through video/audio, write code together in real-time, brainstorm on a shared whiteboard, execute code in multiple programming languages, and automatically generate meeting summaries using AI.
+    <hr>
 
-✨ Features
-👥 Real-Time Collaboration
-Multi-user collaborative coding
-Live cursor synchronization
-Real-time document updates using Yjs CRDTs
-Conflict-free editing
-💻 Collaborative Code Editor
-Monaco Editor (VS Code Editor)
-Syntax highlighting
-Multi-language support
-Real-time synchronization
-🎥 Video & Audio Conferencing
-WebRTC-based peer-to-peer communication
-Camera and microphone controls
-Multi-participant meeting rooms
-Low-latency communication
-📝 Live Meeting Transcript
-Speech-to-text transcription
-Shared transcript among all participants
-Real-time transcript synchronization
-Speaker identification
-🤖 AI Meeting Assistant
+    <h2>📖 Overview</h2>
+    <p>
+        CollabCode is a MERN-stack based real-time collaboration platform designed
+        for developers, students, and teams. The platform integrates video conferencing,
+        collaborative coding, whiteboarding, code execution, live transcription,
+        and AI-powered meeting summaries into a single workspace.
+    </p>
 
-Generates:
+    <hr>
 
-Meeting Summary
-Key Discussion Points
-Decisions Taken
-Action Items
+    <h2>✨ Features</h2>
 
-Powered by:
+    <h3>👥 Real-Time Collaboration</h3>
+    <ul>
+        <li>Multi-user collaborative coding</li>
+        <li>Live cursor synchronization</li>
+        <li>Conflict-free editing using Yjs CRDTs</li>
+        <li>Real-time document updates</li>
+    </ul>
 
-Groq API / Gemini API
-Large Language Models (LLMs)
-🎨 Collaborative Whiteboard
-Real-time drawing
-Shared brainstorming workspace
-Instant synchronization
-⚡ Multi-Language Code Execution
+    <h3>💻 Collaborative Code Editor</h3>
+    <ul>
+        <li>Monaco Editor (VS Code Editor)</li>
+        <li>Syntax Highlighting</li>
+        <li>Multi-language support</li>
+        <li>Real-time synchronization</li>
+    </ul>
 
-Supported Languages:
+    <h3>🎥 Video & Audio Conferencing</h3>
+    <ul>
+        <li>WebRTC-based communication</li>
+        <li>Multi-participant rooms</li>
+        <li>Low-latency audio/video calls</li>
+        <li>Camera and microphone controls</li>
+    </ul>
 
-JavaScript
-Python
-Java
-C++
-C
-🔐 Authentication & Authorization
-JWT Authentication
-Protected Routes
-Secure Password Hashing using bcrypt
-User Session Management
-🗄️ Meeting History Storage
-MongoDB Integration
-Store AI-generated summaries
-Retrieve previous meeting records
-🏗️ System Architecture
+    <h3>📝 Live Meeting Transcript</h3>
+    <ul>
+        <li>Speech-to-text transcription</li>
+        <li>Shared transcript across participants</li>
+        <li>Speaker identification</li>
+        <li>Real-time synchronization</li>
+    </ul>
+
+    <h3>🤖 AI Meeting Assistant</h3>
+    <ul>
+        <li>Meeting Summary Generation</li>
+        <li>Key Discussion Points</li>
+        <li>Decision Extraction</li>
+        <li>Action Item Detection</li>
+    </ul>
+
+    <h3>🎨 Collaborative Whiteboard</h3>
+    <ul>
+        <li>Real-time drawing</li>
+        <li>Shared brainstorming workspace</li>
+        <li>Instant synchronization</li>
+    </ul>
+
+    <h3>⚡ Multi-Language Code Execution</h3>
+    <ul>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>C++</li>
+        <li>C</li>
+    </ul>
+
+    <h3>🔐 Authentication & Authorization</h3>
+    <ul>
+        <li>JWT Authentication</li>
+        <li>Protected Routes</li>
+        <li>Password Hashing using bcrypt</li>
+        <li>User Session Management</li>
+    </ul>
+
+    <hr>
+
+    <h2>🏗️ System Architecture</h2>
+
+<pre>
 Frontend (React + TypeScript)
-        │
-        ▼
+            │
+            ▼
 Node.js + Express Backend
-        │
- ┌──────┼─────────────┐
- │      │             │
- ▼      ▼             ▼
-Socket.IO  WebRTC   MongoDB
- │                    │
- ▼                    ▼
-Real-Time Sync   Meeting Storage
-        │
-        ▼
-   Groq/Gemini AI
-        │
-        ▼
+            │
+ ┌──────────┼─────────────┐
+ │          │             │
+ ▼          ▼             ▼
+Socket.IO  WebRTC      MongoDB
+ │                        │
+ ▼                        ▼
+Real-Time Sync      Meeting Storage
+            │
+            ▼
+        Groq AI
+            │
+            ▼
 Meeting Summary Generation
-🛠️ Tech Stack
-Frontend
-React.js
-TypeScript
-Tailwind CSS
-Monaco Editor
-Yjs
-Excalidraw
-Socket.IO Client
-Backend
-Node.js
-Express.js
-Socket.IO
-WebSocket (ws)
-JWT
-bcryptjs
-Groq SDK
-Database
-MongoDB
-Mongoose
-Real-Time Technologies
-WebRTC
-Socket.IO
-Yjs CRDTs
-AI Integration
-Groq API
-Gemini API (Optional)
-📂 Project Structure
+</pre>
+
+    <hr>
+
+    <h2>🛠️ Technology Stack</h2>
+
+    <h3>Frontend</h3>
+    <ul>
+        <li>React.js</li>
+        <li>TypeScript</li>
+        <li>Tailwind CSS</li>
+        <li>Monaco Editor</li>
+        <li>Yjs</li>
+        <li>Excalidraw</li>
+        <li>Socket.IO Client</li>
+    </ul>
+
+    <h3>Backend</h3>
+    <ul>
+        <li>Node.js</li>
+        <li>Express.js</li>
+        <li>Socket.IO</li>
+        <li>WebSocket (ws)</li>
+        <li>JWT</li>
+        <li>bcryptjs</li>
+        <li>Groq SDK</li>
+    </ul>
+
+    <h3>Database</h3>
+    <ul>
+        <li>MongoDB</li>
+        <li>Mongoose</li>
+    </ul>
+
+    <hr>
+
+    <h2>📂 Project Structure</h2>
+
+<pre>
 CollabCode/
 │
 ├── frontend/
@@ -127,11 +169,14 @@ CollabCode/
 │
 ├── uploads/
 ├── package.json
-└── README.md
-🔑 Environment Variables
+└── README.html
+</pre>
 
-Create a .env file inside the backend folder:
+    <hr>
 
+    <h2>🔑 Environment Variables</h2>
+
+<pre>
 PORT=5000
 
 MONGO_URI=mongodb://localhost:27017/collabcode
@@ -139,23 +184,41 @@ MONGO_URI=mongodb://localhost:27017/collabcode
 JWT_SECRET=your_jwt_secret
 
 GROQ_API_KEY=your_groq_api_key
-⚙️ Installation
-Clone Repository
+</pre>
+
+    <hr>
+
+    <h2>⚙️ Installation</h2>
+
+    <h3>Clone Repository</h3>
+
+<pre>
 git clone https://github.com/yourusername/CollabCode.git
-Backend Setup
+</pre>
+
+    <h3>Backend Setup</h3>
+
+<pre>
 cd backend
-
 npm install
-
 npm run dev
-Frontend Setup
+</pre>
+
+    <h3>Frontend Setup</h3>
+
+<pre>
 cd frontend
-
 npm install
-
 npm run dev
-📊 Database Collections
-Users
+</pre>
+
+    <hr>
+
+    <h2>📊 Database Collections</h2>
+
+    <h3>Users</h3>
+
+<pre>
 {
   _id,
   username,
@@ -163,7 +226,11 @@ Users
   password,
   createdAt
 }
-Meeting Summaries
+</pre>
+
+    <h3>Meeting Summaries</h3>
+
+<pre>
 {
   transcript,
   summary,
@@ -172,89 +239,114 @@ Meeting Summaries
   actionItems,
   createdAt
 }
-🔄 Real-Time Workflow
-Video Call
+</pre>
+
+    <hr>
+
+    <h2>🔄 Workflow</h2>
+
+    <h3>Video Calling</h3>
+
+<pre>
 User Joins Room
-        ↓
+      ↓
 Socket.IO Signaling
-        ↓
+      ↓
 WebRTC Offer
-        ↓
+      ↓
 WebRTC Answer
-        ↓
+      ↓
 ICE Candidate Exchange
-        ↓
+      ↓
 Peer-to-Peer Video Call
-Collaborative Editor
+</pre>
+
+    <h3>Collaborative Editor</h3>
+
+<pre>
 User Types
-      ↓
+     ↓
 Yjs CRDT
-      ↓
+     ↓
 WebSocket Sync
-      ↓
+     ↓
 All Users Receive Changes
-AI Meeting Summary
-Meeting Conversation
-          ↓
+</pre>
+
+    <h3>AI Meeting Summary</h3>
+
+<pre>
+Meeting Discussion
+        ↓
 Speech-to-Text
-          ↓
+        ↓
 Shared Transcript
-          ↓
-Groq/Gemini API
-          ↓
-AI Analysis
-          ↓
+        ↓
+Groq AI
+        ↓
 Summary + Key Points
-          ↓
+        ↓
 MongoDB Storage
-🔒 Security Features
-JWT-based authentication
-Password hashing using bcrypt
-Protected APIs
-Secure environment variables
-Room participant limits
-Server-side validation
-📸 Key Modules
-1. Authentication Module
-User Registration
-Login
-JWT Generation
-Route Protection
-2. Collaboration Module
-Room Management
-Editor Synchronization
-Whiteboard Synchronization
-3. Communication Module
-Video Calling
-Audio Calling
-WebRTC Signaling
-4. AI Meeting Assistant Module
-Transcript Processing
-Summary Generation
-Decision Extraction
-Action Item Detection
-5. Database Module
-User Management
-Meeting History Storage
-🎯 Future Enhancements
-Multi-language speech translation
-Cloud recording
-Screen sharing
-AI code review assistant
-Jira/Trello integration
-Meeting analytics dashboard
-Docker-based code sandbox
-Role-based access control
-👨‍💻 Authors
+</pre>
 
-Ashish Kumar Singh
-B.E. Computer Science Engineering
-Chitkara University
+    <hr>
 
-📄 License
+    <h2>🔒 Security Features</h2>
 
-This project is developed for academic and educational purposes as a final-year engineering project.
+    <ul>
+        <li>JWT Authentication</li>
+        <li>Password Hashing with bcrypt</li>
+        <li>Protected Routes</li>
+        <li>Secure Environment Variables</li>
+        <li>Participant Limits</li>
+        <li>Server-side Validation</li>
+    </ul>
 
-⭐ Project Summary
+    <hr>
 
-CollabCode is a unified developer collaboration platform that integrates real-time code editing, video conferencing, collaborative whiteboarding, code execution, live transcription, and AI-powered meeting summarization into a single workspace. By combining modern technologies such as React, Node.js, WebRTC, Socket.IO, Yjs, MongoDB, and Large Language Models, the platform enhances productivity, collaboration, and meeting efficiency for distributed teams and students.
+    <h2>🎯 Future Enhancements</h2>
+
+    <ul>
+        <li>Multi-language speech translation</li>
+        <li>Cloud recording</li>
+        <li>Screen sharing</li>
+        <li>AI code review assistant</li>
+        <li>Jira/Trello integration</li>
+        <li>Meeting analytics dashboard</li>
+        <li>Docker-based code sandbox</li>
+        <li>Role-based access control</li>
+    </ul>
+
+    <hr>
+
+    <h2>👨‍💻 Author</h2>
+
+    <p>
+        <strong>Ashish Kumar Singh</strong><br>
+        B.E. Computer Science Engineering<br>
+        Chitkara University
+    </p>
+
+    <hr>
+
+    <h2>📄 License</h2>
+
+    <p>
+        This project is developed for academic and educational purposes.
+    </p>
+
+    <hr>
+
+    <h2>⭐ Project Summary</h2>
+
+    <p>
+        CollabCode is a unified developer collaboration platform that combines
+        real-time code editing, WebRTC-based video conferencing, collaborative
+        whiteboarding, code execution, speech transcription, and AI-powered
+        meeting summarization into a single application. The platform leverages
+        React, Node.js, Socket.IO, Yjs, MongoDB, WebRTC, and Groq AI to provide
+        an efficient and intelligent collaborative environment.
+    </p>
+
+</body>
+</html>

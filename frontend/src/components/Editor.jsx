@@ -13,7 +13,7 @@ const LANGUAGES = [
   { label: 'Java', monaco: 'java', piston: 'java', version: '*' },
 ];
 
-const Editor = ({ roomId }) => {
+const Editor = ({ roomId, socket, username }) => {
   const editorRef = useRef(null);
   const providerRef = useRef(null);
   const bindingRef = useRef(null);
@@ -21,8 +21,28 @@ const Editor = ({ roomId }) => {
   
   const [language, setLanguage] = useState(LANGUAGES[0]);
   const [output, setOutput] = useState('');
+  const [executedBy, setExecutedBy] = useState(null);
   const [isRunning, setIsRunning] = useState(false);
   const [showTerminal, setShowTerminal] = useState(true);
+
+  // Synchronize execution output with all room participants
+  useEffect(() => {
+    if (!socket) return;
+
+    const handleCodeOutput = (data) => {
+      if (data && data.output !== undefined) {
+        setOutput(data.output);
+        setExecutedBy(data.executedBy || null);
+        setShowTerminal(true);
+        setIsRunning(false);
+      }
+    };
+
+    socket.on('code-output', handleCodeOutput);
+    return () => {
+      socket.off('code-output', handleCodeOutput);
+    };
+  }, [socket]);
 
   const handleEditorDidMount = (editor, monaco) => {
     editorRef.current = editor;
@@ -77,6 +97,8 @@ const Editor = ({ roomId }) => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          roomId,
+          executedBy: username || 'Anonymous',
           language: language.piston, // piston id doubles as local engine id ('javascript', 'python', 'cpp', 'c', 'java')
           sourceCode: sourceCode
         })
@@ -159,9 +181,14 @@ const Editor = ({ roomId }) => {
              <div className="bg-[#1a1a1a] px-4 py-2 border-b border-gray-700/60 flex items-center justify-between rounded-t-xl">
                 <div className="flex items-center gap-2 text-sm font-semibold text-gray-300">
                   <TerminalIcon size={16} />
-                  Output
+                  <span>Output</span>
+                  {executedBy && (
+                    <span className="text-xs font-normal text-gray-400 font-sans">
+                      (run by <span className="text-blue-400 font-medium">{executedBy}</span>)
+                    </span>
+                  )}
                 </div>
-                <button onClick={() => setOutput('')} className="text-xs text-gray-500 hover:text-gray-300">Clear</button>
+                <button onClick={() => { setOutput(''); setExecutedBy(null); }} className="text-xs text-gray-500 hover:text-gray-300">Clear</button>
              </div>
              <div className="p-4 flex-1 overflow-y-auto custom-scrollbar font-mono text-sm whitespace-pre-wrap text-gray-300">
                {output || <span className="text-gray-600 italic">No output...</span>}
